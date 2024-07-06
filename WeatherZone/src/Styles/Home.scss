@@ -1,0 +1,16 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.Homeroot {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url("../assets/Homebackground.jpg"); /* Adjust path as necessary */
+  background-size: cover;
+  background-position: center;
+  box-sizing: border-box;
+}
