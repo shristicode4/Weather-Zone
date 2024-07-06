@@ -3,7 +3,8 @@ import { Button, IconButton } from "@mui/material";
 import { Link } from "react-router-dom";
 import HomeIcon from "@mui/icons-material/Home";
 import DashboardIcon from "@mui/icons-material/Dashboard";
-import { Typography } from "@mui/material";
+import { Typography, Box } from "@mui/material";
+import backgroundImage from "../assets/Homebackground.jpg";
 
 const Home = () => {
   return (
@@ -19,7 +20,7 @@ const Home = () => {
       >
         Home
       </Button>
-
+      ~
       <Button
         variant="text"
         color="success"
@@ -41,15 +42,18 @@ const Home = () => {
       >
         Login
       </Button>
-
       <div>
-        <Typography variant="h2" color="secondary" align="center">
+        <Typography
+          variant="h2"
+          color="secondary"
+          align="center"
+          sx={{ mt: 30, fontWeight: "bold" }}
+        >
           Welcome to WeatherZone
         </Typography>
 
-        <Typography variant="h6" color="Primary" align="center">
-          Let's dive deep into the weather conditions of cities and countries of
-          your choice
+        <Typography variant="h6" color="Primary" align="center" sx={{ md: 4 }}>
+          Let's dive deep into the weather conditions of your choosen cities
         </Typography>
       </div>
     </>
