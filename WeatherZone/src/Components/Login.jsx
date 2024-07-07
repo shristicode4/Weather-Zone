@@ -2,7 +2,7 @@ import React from "react";
 import logo from "../../public/images/weatherlogo.jpg";
 import eyeIcon from "../../public/images/eye.png";
 import "../Styles/login.scss";
-import { useHistory } from "react-router-dom";
+//import {link} from "react-router-dom";
 
 const Index = () => {
   const spacing = 2;
@@ -44,12 +44,6 @@ const Index = () => {
     backgroundSize: "20px 20px",
     backgroundRepeat: "no-repeat",
     margintop: "-120px",
-  };
-
-  const history = useHistory();
-
-  const handleButtonClick = () => {
-    history.push("/signup");
   };
 
   return (
@@ -97,7 +91,6 @@ const Index = () => {
       </button>
 
       <button
-        onClick={handleButtonClick}
         style={{
           width: "330px",
           padding: "15px",
