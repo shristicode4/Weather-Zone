@@ -2,7 +2,6 @@ import React from "react";
 import logo from "../../public/images/weatherlogo.jpg";
 import eyeIcon from "../../public/images/eye.png";
 import "../Styles/login.scss";
-//import {link} from "react-router-dom";
 
 const Index = () => {
   const spacing = 2;
@@ -90,20 +89,9 @@ const Index = () => {
         Log In
       </button>
 
-      <button
-        style={{
-          width: "330px",
-          padding: "15px",
-          borderRadius: "20px",
-          backgroundColor: "#000000",
-          color: "#ffffff",
-          fontSize: "18px",
-          cursor: "pointer",
-          marginTop: "20px",
-        }}
-      >
-        Or Sign Up
-      </button>
+      <div className="text">
+        <h1> Or Sign Up</h1>
+      </div>
     </div>
   );
 };
