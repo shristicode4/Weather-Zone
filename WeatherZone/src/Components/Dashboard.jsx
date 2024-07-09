@@ -9,6 +9,7 @@ import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import SearchIcon from "@mui/icons-material/Search";
+import InputBase from "@mui/material/InputBase";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
