@@ -7,9 +7,15 @@ import Toolbar from "@mui/material/Toolbar";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import IconButton from "@mui/material/IconButton";
+import ThermostatIcon from "@mui/icons-material/Thermostat";
+import DeviceThermostatIcon from "@mui/icons-material/DeviceThermostat";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
 import SearchIcon from "@mui/icons-material/Search";
 import InputBase from "@mui/material/InputBase";
+import "../Styles/dashboard.scss";
+import Paper from "@mui/material/Paper";
+import Grid from "@mui/material/Grid";
+import { BarChart } from "@mui/x-charts/BarChart";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -50,6 +56,14 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
+
 const Dashboard = () => {
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -68,10 +82,15 @@ const Dashboard = () => {
           >
             <WbSunnyIcon sx={{ color: "white" }} />
           </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Welcome to weather zone
-          </Typography>
-
+          <Box sx={{ display: "flex", alignItems: "center", flexGrow: 1 }}>
+            <Typography variant="h6" component="div" sx={{ mr: 2 }}>
+              Welcome to weather zone
+            </Typography>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <ThermostatIcon sx={{ color: "white", mr: 1 }} />
+              <DeviceThermostatIcon sx={{ color: "white" }} />
+            </Box>
+          </Box>
           <Search>
             <SearchIconWrapper>
               <SearchIcon />
@@ -89,6 +108,36 @@ const Dashboard = () => {
           </Button>
         </Toolbar>
       </AppBar>
+
+      <Grid container spacing={3} sx={{ marginTop: 2, marginLeft: 2.5 }}>
+        <Grid item xs={6.7}>
+          <Item style={{ height: "270px" }}>xs=9</Item>
+          <Item style={{ height: "250px" }} sx={{ marginTop: 2 }}>
+            <Grid item>
+              <img
+                src="WeatherZone\public\images\weatherimg.jpg"
+                alt="weather image "
+                style={{ height: "250px" }}
+              />
+            </Grid>
+            <BarChart
+              series={[
+                { data: [3, 4, 1, 6, 5], stack: "A", label: "Series A1" },
+                { data: [4, 3, 1, 5, 8], stack: "A", label: "Series A2" },
+                { data: [4, 2, 5, 4, 1], stack: "B", label: "Series B1" },
+                { data: [2, 8, 1, 3, 1], stack: "B", label: "Series B2" },
+                { data: [10, 6, 5, 8, 9], label: "Series C1" },
+              ]}
+              width={600}
+              height={250}
+            />
+          </Item>
+        </Grid>
+
+        <Grid item xs={4.5}>
+          <Item style={{ height: "550px" }}>xs=6</Item>
+        </Grid>
+      </Grid>
     </Box>
   );
 };
