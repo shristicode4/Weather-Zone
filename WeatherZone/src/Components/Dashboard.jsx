@@ -18,7 +18,10 @@ import Grid from "@mui/material/Grid";
 import { BarChart } from "@mui/x-charts/BarChart";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import CloudIcon from "@mui/icons-material/Cloud";
+import WindIcon from "@mui/icons-material/Air";
+import HumidityIcon from "@mui/icons-material/Opacity";
 import OpacityIcon from "@mui/icons-material/Opacity";
+import weatherimg from "../assets/weatherimg2.jpg";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -76,21 +79,53 @@ const WeatherIcon = styled(Box)(({ theme }) => ({
 
 const WeatherDay = ({ day, icon, temp }) => (
   <Box>
-    <Typography variant="h6">{day}</Typography>
+    <Typography variant="h6" sx={{ color: "Black" }}>
+      {day}
+    </Typography>
     <WeatherIcon>{icon}</WeatherIcon>
-    <Typography variant="body1">{temp}°C</Typography>
+    <Typography variant="body1" sx={{ color: "Yellow" }}>
+      {temp}°C
+    </Typography>
   </Box>
 );
 
 const WeatherForecast = () => {
   const forecast = [
-    { day: "Mon", icon: <WbSunnyIcon fontSize="large" />, temp: 25 },
-    { day: "Tue", icon: <CloudIcon fontSize="large" />, temp: 20 },
-    { day: "Wed", icon: <AcUnitIcon fontSize="large" />, temp: 10 },
-    { day: "Thu", icon: <OpacityIcon fontSize="large" />, temp: 15 },
-    { day: "Fri", icon: <WbSunnyIcon fontSize="large" />, temp: 27 },
-    { day: "Sat", icon: <CloudIcon fontSize="large" />, temp: 22 },
-    { day: "Sun", icon: <AcUnitIcon fontSize="large" />, temp: 12 },
+    {
+      day: "Mon",
+      icon: <WbSunnyIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 25,
+    },
+    {
+      day: "Tue",
+      icon: <CloudIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 20,
+    },
+    {
+      day: "Wed",
+      icon: <AcUnitIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 10,
+    },
+    {
+      day: "Thu",
+      icon: <OpacityIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 15,
+    },
+    {
+      day: "Fri",
+      icon: <WbSunnyIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 27,
+    },
+    {
+      day: "Sat",
+      icon: <CloudIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 22,
+    },
+    {
+      day: "Sun",
+      icon: <AcUnitIcon fontSize="large" sx={{ color: "white" }} />,
+      temp: 12,
+    },
   ];
 
   return (
@@ -153,13 +188,6 @@ const Dashboard = () => {
         <Grid item xs={6.7}>
           <Item style={{ height: "270px" }}>xs=9</Item>
           <Item style={{ height: "250px" }} sx={{ marginTop: 2 }}>
-            <Grid item>
-              <img
-                src="WeatherZone\public\images\weatherimg.jpg"
-                alt="weather image "
-                style={{ height: "250px" }}
-              />
-            </Grid>
             <BarChart
               series={[
                 { data: [3, 4, 1, 6, 5], stack: "A", label: "Series A1" },
@@ -169,12 +197,32 @@ const Dashboard = () => {
                 { data: [10, 6, 5, 8, 9], label: "Series C1" },
               ]}
               width={600}
-              height={250}
+              height={200}
             />
           </Item>
         </Grid>
         <Grid item xs={4.5}>
           <Item style={{ height: "550px", backgroundColor: "purple" }}>
+            <Grid item>
+              <img
+                src={weatherimg}
+                alt="weather image "
+                style={{
+                  height: "250px",
+                  width: "550px",
+                  borderRadius: "15px",
+                }}
+              />
+            </Grid>
+            <Typography style={{ height: "50px", color: "white" }}>
+              <WindIcon
+                style={{ verticalAlign: "middle", marginRight: "8px" }}
+              />
+              <HumidityIcon
+                style={{ verticalAlign: "middle", marginRight: "8px" }}
+              />
+              Weekly forecast of weather
+            </Typography>
             <WeatherForecast />
           </Item>
         </Grid>

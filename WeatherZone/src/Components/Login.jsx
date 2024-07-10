@@ -1,6 +1,6 @@
 import React from "react";
-import logo from "../../public/images/weatherlogo.jpg";
-import eyeIcon from "../../public/images/eye.png";
+import logo from "../assets/weatherlogo.jpg";
+import eyeIcon from "../assets/eye.png";
 import "../Styles/login.scss";
 
 const Index = () => {
