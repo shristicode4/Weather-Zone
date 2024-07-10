@@ -51,16 +51,28 @@ const Index = () => {
         <div className="text">
           <img src={logo} alt=" Logo" style={logoStyle} />
           <h2>
-            <span style={welcomeTextStyle}>Welcome back </span>
+            <span style={welcomeTextStyle}>Sign Up Now </span>
           </h2>
         </div>
       </div>
       <div>
         <input
           type="text"
-          placeholder="Enter your Mobile or Email ID"
+          placeholder="Enter your Name"
           style={{
             width: "300px",
+            padding: "15px",
+            borderRadius: "20px",
+            marginBottom: "20px",
+          }}
+        />
+      </div>
+      <div>
+        <input
+          type="text"
+          placeholder="Enter your Mobile or Email-ID"
+          style={{
+            width: "310px",
             padding: "15px",
             borderRadius: "20px",
             marginBottom: "20px",

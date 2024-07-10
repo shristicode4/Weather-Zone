@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../assets/weatherlogo.jpg";
 import eyeIcon from "../assets/eye.png";
 import "../Styles/login.scss";
@@ -88,10 +89,21 @@ const Index = () => {
       >
         Log In
       </button>
-
-      <div className="text">
-        <h1> Or Sign Up</h1>
-      </div>
+      <Link to="/SignUp" style={{ textDecoration: "none" }}>
+        <button
+          style={{
+            color: "white",
+            backgroundColor: "Black",
+            borderRadius: "15px",
+            marginTop: "5px",
+            cursor: "pointer",
+          }}
+        >
+          <div className="text">
+            <h1> Or Sign Up</h1>
+          </div>
+        </button>
+      </Link>
     </div>
   );
 };
