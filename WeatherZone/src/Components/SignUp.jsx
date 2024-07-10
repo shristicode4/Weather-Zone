@@ -86,6 +86,7 @@ const Index = () => {
           style={inputStyle}
         />
       </div>
+
       <button
         style={{
           width: "330px",
