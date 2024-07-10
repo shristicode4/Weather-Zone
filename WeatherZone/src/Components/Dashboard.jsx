@@ -16,6 +16,9 @@ import "../Styles/dashboard.scss";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import { BarChart } from "@mui/x-charts/BarChart";
+import AcUnitIcon from "@mui/icons-material/AcUnit";
+import CloudIcon from "@mui/icons-material/Cloud";
+import OpacityIcon from "@mui/icons-material/Opacity";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -63,6 +66,43 @@ const Item = styled(Paper)(({ theme }) => ({
   textAlign: "center",
   color: theme.palette.text.secondary,
 }));
+
+const WeatherIcon = styled(Box)(({ theme }) => ({
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  marginBottom: theme.spacing(1),
+}));
+
+const WeatherDay = ({ day, icon, temp }) => (
+  <Box>
+    <Typography variant="h6">{day}</Typography>
+    <WeatherIcon>{icon}</WeatherIcon>
+    <Typography variant="body1">{temp}°C</Typography>
+  </Box>
+);
+
+const WeatherForecast = () => {
+  const forecast = [
+    { day: "Mon", icon: <WbSunnyIcon fontSize="large" />, temp: 25 },
+    { day: "Tue", icon: <CloudIcon fontSize="large" />, temp: 20 },
+    { day: "Wed", icon: <AcUnitIcon fontSize="large" />, temp: 10 },
+    { day: "Thu", icon: <OpacityIcon fontSize="large" />, temp: 15 },
+    { day: "Fri", icon: <WbSunnyIcon fontSize="large" />, temp: 27 },
+    { day: "Sat", icon: <CloudIcon fontSize="large" />, temp: 22 },
+    { day: "Sun", icon: <AcUnitIcon fontSize="large" />, temp: 12 },
+  ];
+
+  return (
+    <Grid container spacing={2}>
+      {forecast.map(({ day, icon, temp }) => (
+        <Grid item xs={12} sm={6} md={4} lg={3} key={day}>
+          <WeatherDay day={day} icon={icon} temp={temp} />
+        </Grid>
+      ))}
+    </Grid>
+  );
+};
 
 const Dashboard = () => {
   return (
@@ -133,9 +173,10 @@ const Dashboard = () => {
             />
           </Item>
         </Grid>
-
         <Grid item xs={4.5}>
-          <Item style={{ height: "550px" }}>xs=6</Item>
+          <Item style={{ height: "550px", backgroundColor: "purple" }}>
+            <WeatherForecast />
+          </Item>
         </Grid>
       </Grid>
     </Box>
