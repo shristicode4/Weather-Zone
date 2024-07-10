@@ -22,6 +22,7 @@ import WindIcon from "@mui/icons-material/Air";
 import HumidityIcon from "@mui/icons-material/Opacity";
 import OpacityIcon from "@mui/icons-material/Opacity";
 import weatherimg from "../assets/weatherimg2.jpg";
+import Forecast from "./Forecast";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
@@ -186,8 +187,13 @@ const Dashboard = () => {
 
       <Grid container spacing={3} sx={{ marginTop: 2, marginLeft: 2.5 }}>
         <Grid item xs={6.7}>
-          <Item style={{ height: "270px" }}>xs=9</Item>
-          <Item style={{ height: "250px" }} sx={{ marginTop: 2 }}>
+          <Item style={{ height: "270px", background: "#e0f2f1" }}>
+            <Forecast />
+          </Item>
+          <Item
+            style={{ height: "250px", background: "#e0f2f1" }}
+            sx={{ marginTop: 2 }}
+          >
             <BarChart
               series={[
                 { data: [3, 4, 1, 6, 5], stack: "A", label: "Series A1" },
@@ -197,7 +203,7 @@ const Dashboard = () => {
                 { data: [10, 6, 5, 8, 9], label: "Series C1" },
               ]}
               width={600}
-              height={200}
+              height={250}
             />
           </Item>
         </Grid>
