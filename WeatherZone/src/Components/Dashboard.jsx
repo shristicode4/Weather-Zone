@@ -22,7 +22,7 @@ import WindIcon from "@mui/icons-material/Air";
 import HumidityIcon from "@mui/icons-material/Opacity";
 import OpacityIcon from "@mui/icons-material/Opacity";
 import weatherimg from "../assets/weatherimg2.jpg";
-import Forecast from "./Forecast";
+import Forecast from "./Forecast.jsx";
 
 const Search = styled("div")(({ theme }) => ({
   position: "relative",
