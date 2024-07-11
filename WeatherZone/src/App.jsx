@@ -5,14 +5,15 @@ import Dashboard from "./Components/Dashboard";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Forecast from "./Components/Forecast";
-import getWeatherData from "./Service/weatherService";
+import geFormattedtWeatherData from "./Service/weatherService";
+import getFormattedWeatherData from "./Service/weatherService";
 
 const App = () => {
   const [weatherData, setWeatherData] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getWeatherData("weather", { q: "india" });
+      const data = await getFormattedWeatherData({ q: "india" });
       console.log(data);
       setWeatherData(data);
     };
