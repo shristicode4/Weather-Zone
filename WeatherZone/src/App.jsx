@@ -5,7 +5,6 @@ import Dashboard from "./Components/Dashboard";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import Forecast from "./Components/Forecast";
-import geFormattedtWeatherData from "./Service/weatherService";
 import getFormattedWeatherData from "./Service/weatherService";
 
 const App = () => {
